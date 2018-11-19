@@ -1,19 +1,76 @@
-<!DOCTYPE html>
+<!doctype <!DOCTYPE html>
 <html>
-    <head>
-        <title>Zagster Bikes in Bend</title>
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-        <script src="main.js"></script>
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <h1>Zagster Bike Share in Bend</h1>
-        <h2 id="rideCount">TODO</h2>
-        <p>
-            <img src="IMG_3517.JPG" alt="sketch 1" width="500" height="600">
-        </p>
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zagster Bike Share</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</head>
+<body>
+    
+    <h1>Zagster Bike Share</h1>
+    <center><div id="chartContainer"><canvas id="myChart"></canvas></div></center>
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["January", "Febuary", "March", "April", "May", "June","July","August","September","October","November","December"],
+            datasets: [{
+                label: 'Total Rides',
+                data: [20, 31, 79, 88, 156, 301, 405, 187,401, 353, 113, 79],
+                backgroundColor: [
+                    'rgba(0, 0, 0, 0.2)',
+                    'rgba(89, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    
+                    
+
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+    <h2 id="rideCount">Bend Oregon</h2>
+    <P>Total number of rides per month (2017)</P>
+    
+    
+</body>
 </html>
